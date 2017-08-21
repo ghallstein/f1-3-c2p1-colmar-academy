@@ -1,0 +1,457 @@
+
+/*color palate
+#EBEFF4 offwhite - secondary background color pairs well with white background and colors below
+#939797 Grey general text
+#7EC3CC light blue -button background
+#66B8C5 blue - header
+#E19D94 Pink a for pop
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700');
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #939797;/*see palette*/
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h1,h2,h3,h4,h5,span {
+  display: block;
+}
+
+button {
+  width: 100%;
+  background-color: #7EC3CC;/*see palette*/
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: white;/*see palette*/
+  border: none;
+  margin-top: 1.5rem;
+}
+
+button a {
+  color: white;/*see palette notes*/
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+h1, h2,h3,h4 p {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*************** Header ***************/
+
+header {
+  z-index: 1;
+  height: 64px;
+  color: #66B8C5;
+  background-color: white;/*see palate notes*/
+  overflow: hidden; /*so the nav spans will hide instead of appearing below the header*/
+  flex-wrap: nowrap;
+}
+
+header a {
+  color: inherit;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+nav {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  align-content: center;
+}
+
+nav img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+ul li {
+  display: inline;
+  padding: 0 .5rem;
+}
+
+li {
+  padding-left: 2rem;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/*to replace text nav with icon mobile nav*/
+@media only screen and (max-width: 525px){
+  nav ul {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+    text-align: center;
+  }
+}
+
+/*to remove the logo text once screen is too small to fit*/
+@media only screen and (max-width: 480px){
+  .logo span{
+    display: none;
+  }
+}
+
+/*************** Jumbotron ***************/
+.jumbotron {
+  background-color: #EBEFF4;/*see palette*/
+}
+
+.banner-card {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 525px){
+  #jumbotron {
+    padding: 0;
+    margin: 0;
+  }
+  #jumbotron >.left-section {
+    min-width:100%;
+    margin:0;
+  }
+  #jumbotron>.left-section > .bigpic-section {
+    min-width: 100%;
+    margin:0;
+    height: auto;
+  }
+  #jumbotron > .right-section {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/*********** General styling for sections ********/
+video, img {
+  width: 100%;
+  height: auto;
+}
+
+.whole-section {
+  padding-bottom: 32px;
+}
+
+.title-section {
+  width: 100%;
+  text-align: center;
+  padding: 32px 0 ;
+  font-size: 3rem;
+}
+
+.left-section {
+  width: 60%;
+  margin-top: 32px;
+}
+
+.right-section {
+  width: 40%;
+  margin-top: 16px; /*16 + 16padding from cards = 32 to line up with left pic*/
+}
+.bigpic-section {
+  margin: 0 24px;
+  display: flex;
+}
+.img-large {
+  width:100%;
+  height: auto;
+}
+.card-section {
+  flex-wrap: nowrap;/*so the description section wont drop below the picture*/
+  width: 100%;
+  padding: 16px;
+  align-items: center;
+  border-left: 1px solid #EBEFF4;/*see palette*/
+}
+
+.card-section > .description {
+  max-width: 65%;
+  margin-right: 16px;
+}
+
+.card-section > .description span {
+  margin-left: 16px;
+}
+
+.img-small {
+  width: 35%;
+  height: auto;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: baseline;
+}
+
+.description span {
+  margin-top: 8px;
+  display: block;
+}
+
+.description span:first-child {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #66B8C5;/*see palette*/
+}
+
+
+.bigpic-section > .description span:first-child{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.bigpic-section > .description span:last-child{
+  margin-top: 32px;
+}
+
+.bigpic-section > .description {
+  height: 100%;
+}
+
+@media only screen and (max-width:768px){
+  .whole-section{
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-section{
+    width: 100%;
+  }
+  .right-section{
+    width: 100%;
+  }
+  .card-section{
+    border: none;
+  }
+}
+
+/*information*/
+#information{
+
+}
+
+#information a{
+  color: #E19D94;/*see palette*/
+}
+
+#information>.right-section>.card-section:last-child{
+  background-color: #EBEFF4;/*see palette*/
+}
+
+.mobile-img{
+  display: none;
+}
+
+@media only screen and (max-width: 525px){
+  #information >.left-section {
+    display: none;
+  }
+  #information >.right-section {
+    min-width: 100%;
+  }
+  #information >.img-small {
+    min-width: 100%;
+    margin:0;
+    height: auto;
+  }
+  #information>.right-section>.card-section:last-child{
+    background-color: inherit;/*remove*/
+  }
+ .img-small img:first-child{
+   display: none;
+ }
+  .img-small {
+    width: auto;
+    height: 100%;
+  }
+  .mobile-img{
+    display:flex;
+  }
+  .card-section > .description {
+    min-width: 100%;
+  }
+  .card-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+  }
+}
+
+/*************** courses ***************/
+
+#courses {
+  background-color: #EBEFF4;
+}
+
+.topic {
+  margin: 32px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.courses {
+  margin: 0 64px 16px 64px;/*used 16px less than spec sheet because the margin of the cards*/
+  justify-content: center;
+  max-width: 1200px; /*to keep a min of 2 cards at bottom*/
+}
+
+.course-card {
+  width: 250px;
+  margin: 16px;
+  background-color: white;
+}
+
+.course-card >.description {
+  margin: 8px 0 24px 16px;
+}
+
+.course-img {
+
+}
+
+.course-card >.description {
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 525px){
+  #courses>.courses>.course-card>.course-img {
+    display: none;
+  }
+  #courses>.courses>.course-card{
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  #courses>.courses>.course-card>.description span:nth-child(1n+2){
+    display: none;
+  }
+  #courses>.courses>.course-card>.description{
+    margin: 16px 16px 24px 16px;
+  }
+  .course-card{
+
+  }
+}
+
+
+/*************** thesis ***************/
+#thesis >.left-section {
+  opacity: .80;/*so the black in video blends better with page*/
+}
+
+#thesis >.right-section {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#thesis>.right-section>.card-section:first-child{
+  background-color: #EBEFF4;
+}
+
+@media only screen and (max-width: 525px){
+  #thesis >.right-section {
+    display: none;
+  }
+  #thesis >.left-section {
+    min-width: 100%;
+    margin: 0;
+  }
+  #thesis>.left-section > .bigpic-section {
+    min-width: 100%;
+    margin:0;
+    height: auto;
+  }
+  #thesis>.left-section>.bigpic-section>.description {
+    display: none;
+  }
+}
+
+/**************footer ********************/
+footer {
+  margin: 0px 24px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  padding: 16px 0;
+}
+
+@media only screen and (max-width: 525px){
+  footer span:last-child{
+    display: none;
+  }
+  footer {
+    border: none;
+  }
+}
